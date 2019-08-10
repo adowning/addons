@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields
-import cStringIO
 import requests
 
 from . import helpers
@@ -20,7 +19,7 @@ class Employee(models.Model):
         requests.post('http://172.17.0.1:3000', files={
             'photo': (
                 '{}-{}.jpg'.format(helpers.deaccent(self.name.encode('utf-8')), self.id),
-                cStringIO.StringIO(image_data),
+                io.StringIO(image_data),
                 'image/jpeg')
         }, data={
             'name': self.name
