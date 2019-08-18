@@ -7,7 +7,7 @@
 
 async function dbAccess(){
     
-    var conString = "postgress://openpg:openpgpwd@localhost:5432/eesti_restaurant";
+    var conString = "postgress://odoo@db:5432/one";
     const {Client} = require('pg');
     const client = new Client(conString);
 
